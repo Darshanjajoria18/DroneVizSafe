@@ -16,8 +16,7 @@ A Python-based drone deconfliction system for the FlytBase Robotics Assignment. 
 - **Test Scenarios**:
   - `no_conflict`: Clear paths.
   - `conflict_1`: Conflict at t≈12.5 (~8.66m).
-  - `conflict_2`: Conflict at t≈5.0 (~7.07m).
-  - `conflict_3`: Dual conflicts at t≈10 (~6.71m), t≈20 (~8.94m).
+  - `conflict_2`: Dual conflicts at t≈10 (~6.71m), t≈20 (~8.94m).
 
 ### 2. Documentation
 - **README**: This file provides setup and execution instructions.

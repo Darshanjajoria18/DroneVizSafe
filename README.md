@@ -36,14 +36,3 @@ A Python-based drone deconfliction system for the FlytBase Robotics Assignment. 
 - Dependencies:
   ```bash
   pip install plotly numpy kaleido
-
-DroneSafePath/
-├── tests/                  # Test JSONs (for modular setup)
-│   ├── test_data_no_conflict.json
-│   ├── test_data_conflict_1.json
-│   ├── test_data_conflict_2.json
-│   ├── test_data_conflict_3.json
-├── drone_deconfliction.ipynb  # Single notebook option
-├── reflection.md           # Design and justification
-├── README.md               # This file
-├── .gitignore              # Ignores outputs, venvs

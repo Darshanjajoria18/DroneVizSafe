@@ -7,7 +7,6 @@ A Python-based drone deconfliction system for the FlytBase Robotics Assignment. 
 ### 1. Code Repository
 - **Solution**: A Python solution simulating multiple drone trajectories and performing spatial-temporal conflict detection.
   - **Single Notebook Option**: `drone_deconfliction.ipynb` embeds test data (JSON strings) for portability, eliminating `FileNotFoundError` issues.
-  - **Modular Option**: Files in `src/` (`data_loader.py`, `conflict_checker.py`, `visualization.py`, `main.py`) with test JSONs in `tests/`.
 - **Modularity**: Code is organized into distinct modules:
   - Data loading and validation.
   - Conflict detection (spatial-temporal checks).
@@ -17,16 +16,7 @@ A Python-based drone deconfliction system for the FlytBase Robotics Assignment. 
   - `no_conflict`: Clear paths.
   - `conflict_1`: Conflict at t≈12.5 (~8.66m).
   - `conflict_2`: Dual conflicts at t≈10 (~6.71m), t≈20 (~8.94m).
-
-### 2. Documentation
-- **README**: This file provides setup and execution instructions.
-- **Reflection & Justification Document**: See `reflection.md` (1–2 pages) for:
-  - Design decisions and architecture (modular vs. notebook).
-  - Spatial-temporal conflict checks using linear interpolation and 30 time steps.
-  - No AI integration; focus on deterministic algorithms.
-  - Testing strategy: Four scenarios covering no-conflict, single, and dual conflicts; edge cases like simultaneous conflicts.
-  - Scalability: Discusses real-world challenges (e.g., handling 10,000+ drones with optimized data structures, parallel processing).
-
+    
 ## Setup Instructions
 
 ### Prerequisites

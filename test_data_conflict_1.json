@@ -1,0 +1,33 @@
+{
+  "mission": {
+    "waypoints": [
+      {"x": 0, "y": 0, "z": 20, "time": 0},
+      {"x": 120, "y": 60, "z": 30, "time": 12.5},
+      {"x": 240, "y": 120, "z": 40, "time": 25}
+    ],
+    "time_window": {"start": 0, "end": 25}
+  },
+  "schedules": [
+    {
+      "drone_id": "drone_A",
+      "waypoints": [
+        {"x": 100, "y": 50, "z": 25, "time": 12.5},
+        {"x": 150, "y": 80, "z": 35, "time": 15}
+      ]
+    },
+    {
+      "drone_id": "drone_B",
+      "waypoints": [
+        {"x": 250, "y": 250, "z": 110, "time": 0},
+        {"x": 350, "y": 300, "z": 110, "time": 25}
+      ]
+    }
+  ],
+  "test_scenarios": {
+    "scenario_A": {
+      "description": "Conflict - drone_A too close to primary drone at t=12.5",
+      "drone_id": "drone_A",
+      "expected": "conflict detected"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "mission": {
+    "waypoints": [
+      {"x": 0, "y": 0, "z": 10, "time": 0},
+      {"x": 100, "y": 50, "z": 20, "time": 10},
+      {"x": 200, "y": 100, "z": 30, "time": 20}
+    ],
+    "time_window": {"start": 0, "end": 20}
+  },
+  "schedules": [
+    {
+      "drone_id": "drone_A",
+      "waypoints": [
+        {"x": 300, "y": 300, "z": 100, "time": 5},
+        {"x": 400, "y": 350, "z": 110, "time": 15}
+      ]
+    },
+    {
+      "drone_id": "drone_B",
+      "waypoints": [
+        {"x": 200, "y": 200, "z": 100, "time": 0},
+        {"x": 300, "y": 250, "z": 100, "time": 20}
+      ]
+    }
+  ],
+  "test_scenarios": {
+    "scenario_A": {
+      "description": "No conflict - drone_A has a distant path (300,300,100 to 400,350,110) during mission time",
+      "drone_id": "drone_A",
+      "expected": "clear"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "mission": {
+    "waypoints": [
+      {"x": 0, "y": 0, "z": 10, "time": 0},
+      {"x": 100, "y": 50, "z": 20, "time": 10},
+      {"x": 200, "y": 100, "z": 30, "time": 20}
+    ],
+    "time_window": {"start": 0, "end": 30}
+  },
+  "schedules": [
+    {
+      "drone_id": "drone_1",
+      "waypoints": [
+        {"x": 100, "y": 100, "z": 60, "time": 5},
+        {"x": 200, "y": 150, "z": 70, "time": 15},
+        {"x": 300, "y": 200, "z": 80, "time": 25}
+      ]
+    },
+    {
+      "drone_id": "drone_2",
+      "waypoints": [
+        {"x": 0, "y": 0, "z": 10, "time": 40},
+        {"x": 100, "y": 50, "z": 20, "time": 50},
+        {"x": 200, "y": 100, "z": 30, "time": 60}
+      ]
+    },
+    {
+      "drone_id": "drone_3",
+      "waypoints": [
+        {"x": 100, "y": 50, "z": 20, "time": 10},
+        {"x": 200, "y": 100, "z": 30, "time": 20}
+      ]
+    },
+    {
+      "drone_id": "drone_4",
+      "waypoints": [
+        {"x": 50, "y": 50, "z": 20, "time": 10},
+        {"x": 150, "y": 100, "z": 30, "time": 20}
+      ]
+    },
+    {
+      "drone_id": "drone_5",
+      "waypoints": [
+        {"x": 0, "y": 0, "z": 10, "time": 5},
+        {"x": 100, "y": 50, "z": 20, "time": 15}
+      ]
+    }
+  ],
+  "test_scenarios": {
+    "scenario_1": {
+      "description": "No conflict - drone_1 has different spatial path and time overlap is minimal",
+      "drone_id": "drone_1",
+      "expected": "clear"
+    },
+    "scenario_2": {
+      "description": "No conflict - drone_2 has identical path but outside time window (40-60s vs 0-30s)",
+      "drone_id": "drone_2",
+      "expected": "clear"
+    },
+    "scenario_3": {
+      "description": "Spatial and temporal conflict - drone_3 is at same position (100,50,20) at t=10 and (200,100,30) at t=20",
+      "drone_id": "drone_3",
+      "expected": "conflict detected"
+    },
+    "scenario_4": {
+      "description": "Edge case - drone_4 is close to primary drone (e.g., 50 units away at t=10) to test safety buffer",
+      "drone_id": "drone_4",
+      "expected": "clear"
+    },
+    "scenario_5": {
+      "description": "Temporal conflict - drone_5 overlaps at (0,0,10) at t=5 and close to (100,50,20) at t=15",
+      "drone_id": "drone_5",
+      "expected": "conflict detected"
+    }
+  }
+}
